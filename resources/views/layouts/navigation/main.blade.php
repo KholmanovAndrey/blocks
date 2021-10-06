@@ -3,6 +3,13 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
+                <!-- Logo -->
+                <div class="sm:hidden flex-shrink-0 flex items-center">
+                    <a href="{{ route('dashboard') }}">
+                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                    </a>
+                </div>
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:flex">
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
@@ -74,6 +81,52 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
                 {{ __('Главная') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Продукция') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Новости') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Акции') }}
+            </x-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Оплата/Доставка') }}
+            </x-responsive-nav-link>
+        </div>
+        <div x-data="{ dropdownOpen: false }" class="pt-2 space-y-1">
+            <x-responsive-nav-link @click="dropdownOpen = !dropdownOpen" class="h-full flex justify-between">
+                {{ __('О компании') }} <svg class="h-5 w-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+            </x-responsive-nav-link>
+
+            <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
+
+            <div x-show="dropdownOpen" class="py-2 w-full bg-gray-300">
+                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    Наши награды
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    Сертификаты
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    О нас
+                </x-responsive-nav-link>
+            </div>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                {{ __('Контакты') }}
             </x-responsive-nav-link>
         </div>
     </div>

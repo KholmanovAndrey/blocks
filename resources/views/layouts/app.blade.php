@@ -18,7 +18,27 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation.admin')
+            <header class="bg-white shadow">
+                @if (Route::has('login'))
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-end">
+                        @auth
+                        @else
+                            <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Войти</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Регистрация</a>
+                            @endif
+                        @endauth
+                    </div>
+                @endif
+            </header>
+
+            @if (Route::has('login'))
+                @auth
+                    @include('layouts.navigation.admin')
+                @endauth
+            @endif
+
             @include('layouts.navigation.main')
 
             <!-- Page Heading -->
