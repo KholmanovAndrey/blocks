@@ -27,12 +27,12 @@
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    <x-nav-link :href="route('sale')" :active="request()->routeIs('sale')">
                         {{ __('Акции') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    <x-nav-link :href="route('payment-and-delivery')" :active="request()->routeIs('payment-and-delivery')">
                         {{ __('Оплата/Доставка') }}
                     </x-nav-link>
                 </div>
@@ -46,19 +46,19 @@
                     <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
 
                     <div x-show="dropdownOpen" class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20 bg-gray-800">
-                        <a href="#" class="block px-4 py-2 text-sm capitalize text-white hover:bg-white hover:text-gray-700">
+                        <a href="{{ route('award') }}" class="block px-4 py-2 text-sm capitalize text-white hover:bg-white hover:text-gray-700">
                             Наши награды
                         </a>
-                        <a href="#" class="block px-4 py-2 text-sm capitalize text-white hover:bg-white hover:text-gray-700">
+                        <a href="{{ route('certificate') }}" class="block px-4 py-2 text-sm capitalize text-white hover:bg-white hover:text-gray-700">
                             Сертификаты
                         </a>
-                        <a href="#" class="block px-4 py-2 text-sm capitalize text-white hover:bg-white hover:text-gray-700">
+                        <a href="{{ route('about') }}" class="block px-4 py-2 text-sm capitalize text-white hover:bg-white hover:text-gray-700">
                             О нас
                         </a>
                     </div>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:flex">
-                    <x-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                    <x-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                         {{ __('Контакты') }}
                     </x-nav-link>
                 </div>
@@ -94,12 +94,12 @@
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+            <x-responsive-nav-link :href="route('sale')" :active="request()->routeIs('sale')">
                 {{ __('Акции') }}
             </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+            <x-responsive-nav-link :href="route('payment-and-delivery')" :active="request()->routeIs('payment-and-delivery')">
                 {{ __('Оплата/Доставка') }}
             </x-responsive-nav-link>
         </div>
@@ -113,19 +113,19 @@
             <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
 
             <div x-show="dropdownOpen" class="py-2 w-full bg-gray-300">
-                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                <x-responsive-nav-link :href="route('award')" :active="request()->routeIs('award')">
                     Наши награды
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                <x-responsive-nav-link :href="route('certificate')" :active="request()->routeIs('certificate')">
                     Сертификаты
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+                <x-responsive-nav-link :href="route('about')" :active="request()->routeIs('about')">
                     О нас
                 </x-responsive-nav-link>
             </div>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('home')" :active="request()->routeIs('home')">
+            <x-responsive-nav-link :href="route('contact')" :active="request()->routeIs('contact')">
                 {{ __('Контакты') }}
             </x-responsive-nav-link>
         </div>

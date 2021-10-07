@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $items = Product::query()->where('isDeleted', '=', 1)->get();
+        $items = Product::query()->where('isDeleted', '=', 0)->get();
 
         return view('product.index', compact('items'));
     }

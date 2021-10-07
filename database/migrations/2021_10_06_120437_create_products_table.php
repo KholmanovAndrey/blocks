@@ -30,7 +30,7 @@ class CreateProductsTable extends Migration
             $table->string('packaging')->comment('Упаковка');
             $table->string('soundproofing')->nullable(true)->comment('Звукоизоляция');
             $table->string('image')->comment('Картинка');
-            $table->boolean('isDeleted')->default(true);
+            $table->boolean('isDeleted')->default(false);
 
             $table->string('meta_title');
             $table->string('meta_keywords');

@@ -14,7 +14,7 @@ class NewsController extends Controller
      */
     public function index()
     {
-        $items = News::query()->where('isDeleted', '=', 1)->get();
+        $items = News::query()->where('isDeleted', '=', 0)->get();
 
         return view('news.index', compact('items'));
     }
