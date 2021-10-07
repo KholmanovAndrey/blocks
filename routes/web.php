@@ -22,4 +22,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+// route news
+Route::resource('/news', \App\Http\Controllers\NewsController::class)
+    ->only(['index', 'show']);
+
+// route product
+Route::resource('/product', \App\Http\Controllers\ProductController::class)
+    ->only(['index', 'show']);
+
 require __DIR__.'/auth.php';

@@ -19,6 +19,8 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->text('text');
+            $table->boolean('isDeleted')->default(true);
+
 
             $table->string('meta_title')->nullable();
             $table->string('meta_keywords')->nullable();

@@ -14,28 +14,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $items = News::query()->where('isDeleted', '=', 1)->get();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return view('news.index', compact('items'));
     }
 
     /**
@@ -46,40 +27,8 @@ class NewsController extends Controller
      */
     public function show(News $news)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\News  $news
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(News $news)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\News  $news
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, News $news)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\News  $news
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(News $news)
-    {
-        //
+        return view('news.show', [
+            'item' => $news
+        ]);
     }
 }

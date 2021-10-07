@@ -18,6 +18,8 @@ class CreateProductTypesTable extends Migration
             $table->unsignedBigInteger('product_id');
             $table->string('type');
             $table->string('price');
+            $table->boolean('isDeleted')->default(true);
+
             $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('products');

@@ -1,3 +1,7 @@
+@section('title','Главная')
+@section('robots', 'index, follow')
+@section('revisit-after', 'content="3 days')
+
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
